@@ -137,8 +137,15 @@
             loadingDiv.innerHTML = ``;
             for(let i=0; i<5; i++){
                 if(data[i].title == "NA"){
-                    titles[i].innerHTML = `<h3>No match found !!</h3>`
-                    break;
+                    if(i==0){
+                        titles[i].innerHTML = `<h3>No match found !!</h3>`;
+                        urls[i].innerHTML = `<a></a>`;
+                    }
+                    else{
+                        titles[i].innerHTML = `<h3></h3>`;
+                        urls[i].innerHTML = `<a></a>`;
+                    }  
+                    continue;
                 }
                 titles[i].innerHTML = `<h3>${data[i].title}</h3>`;
                 urls[i].innerHTML = `<a href="${data[i].url}" target="_blank">${data[i].url}</a>`
